@@ -6,6 +6,9 @@ import twilio from "twilio";
 import { sendToken } from "../utils/sendToken.js";
 import crypto from "crypto";
 
+
+const client = twilio(process.env.TWILIO_SID, process.env.TWILIO_AUTH_TOKEN);
+
 export const register = catchAsyncError(async (req, res, next) => {
     try {
         const { name, email, phone, password, verificationMethod } = req.body;
