@@ -2,8 +2,7 @@ import express from "express";
 import { config } from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-
-
+import { connection } from "./database/dbConnection.js";
 
 // Initialize Express app and load environment variables
 export const app = express();
@@ -22,3 +21,6 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
+connection();
+
+export default app;
