@@ -3,6 +3,7 @@ import { config } from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import { connection } from "./database/dbConnection.js";
+import { errorMiddleware } from './middlewares/error';
 
 // Initialize Express app and load environment variables
 export const app = express();
@@ -22,5 +23,9 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
 connection();
+
+
+
+app.use(errorMiddleware)
 
 export default app;
