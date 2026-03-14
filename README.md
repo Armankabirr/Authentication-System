@@ -185,4 +185,4 @@ npm i twilio
 
 ## License
 
-No license is currently declared at repository root. Add a `LICENSE` file if you plan to distribute this project.
+No license is currently
